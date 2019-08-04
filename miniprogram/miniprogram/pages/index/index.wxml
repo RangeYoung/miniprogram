@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+  </view>
+
+
+  <!-- 上传图片 -->
+  <view class="upphoto">
+  <view>
+   <button class="userinfo-avatarph" bindtap="doUpload"
+    style="background-image: url({{ph}})">上传</button>
+  </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view>
+   
+  <!-- 百科 -->
+  <view class="uploader">
+    <navigator url="../baike/baike" open-type="navigate" class="uploader-text">
+      <text>分类小百科</text>
+    </navigator>
+  </view>
+
+
+</view>
